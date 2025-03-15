@@ -283,7 +283,262 @@ Keeping VMware infrastructure up to date is essential for security and stability
 esxcli software profile update -p ESXi-7.0 -d /vmfs/volumes/patch-depot
 ```
 
+
 ---
+
+## **19. VMware Site Recovery Manager (SRM)**
+### **Theory**
+SRM automates disaster recovery by orchestrating failover and failback of VMware workloads across datacenters.
+
+### **Configuration Code**
+```shell
+# Configure SRM Protection Group
+New-SrmProtectionGroup -Name "DR-Group" -RecoveryPlan "Plan1"
+```
+
+---
+
+## **20. VMware Update Manager (VUM)**
+### **Theory**
+VUM automates patching and upgrades for ESXi hosts and VMware tools.
+
+### **Configuration Code**
+```shell
+# Scan ESXi hosts for updates
+Get-VMHost | Scan-VMHostPatch
+```
+
+---
+
+## **21. VMware Security Hardening**
+### **Theory**
+Security best practices include restricting access, enabling encryption, and implementing role-based access control (RBAC).
+
+### **Configuration Code**
+```shell
+# Enable ESXi Secure Boot
+esxcli system settings advanced set -o /UserVars/SecureBoot -i 1
+```
+
+---
+
+## **22. VMware Auto Deploy**
+### **Theory**
+Auto Deploy provisions ESXi hosts via PXE boot without requiring manual installation.
+
+### **Configuration Code**
+```shell
+# Enable Auto Deploy
+Get-VMHost | Set-VMHost -State Active
+```
+
+---
+
+## **23. VMware vRealize Operations (vROps)**
+### **Theory**
+vROps monitors VMware environments, providing real-time analytics and performance optimization.
+
+### **Configuration Code**
+```shell
+# Connect vRealize Operations Manager
+Connect-OMServer -Server vROps-Server
+```
+
+---
+
+## **24. VMware vRealize Automation (vRA)**
+### **Theory**
+vRA enables self-service cloud automation for provisioning VMs and applications.
+
+### **Configuration Code**
+```shell
+# Deploy a VM via vRA
+Request-NewVM -Blueprint "Linux_Template"
+```
+
+---
+
+## **25. VMware vSphere Replication**
+### **Theory**
+vSphere Replication replicates VMs between datacenters for disaster recovery.
+
+### **Configuration Code**
+```shell
+# Configure vSphere Replication
+New-Replication -Source VM1 -Destination VM2
+```
+
+---
+
+## **26. VMware vSphere Trust Authority (vTA)**
+### **Theory**
+vTA enhances security by establishing a trusted infrastructure for ESXi hosts.
+
+### **Configuration Code**
+```shell
+# Enable vSphere Trust Authority
+Set-TrustAuthority -Enable
+```
+
+---
+
+## **27. VMware Content Library**
+### **Theory**
+A content library centralizes VM templates, ISOs, and scripts for easy deployment.
+
+### **Configuration Code**
+```shell
+# Create a Content Library
+New-ContentLibrary -Name "VMTemplates"
+```
+
+---
+
+## **28. VMware vSphere Storage Policies**
+### **Theory**
+Storage policies define VM storage requirements such as performance and redundancy.
+
+### **Configuration Code**
+```shell
+# Create a storage policy
+New-StoragePolicy -Name "HighPerformance"
+```
+
+---
+
+## **29. VMware vSphere API (REST API & SDKs)**
+### **Theory**
+VMware offers APIs for programmatic access to vSphere infrastructure.
+
+### **Configuration Code**
+```shell
+# Get VM information via API
+Invoke-RestMethod -Uri "https://vcenter/api/vms"
+```
+
+---
+
+## **30. VMware NSX-T (Advanced Networking and Security)**
+### **Theory**
+NSX-T extends network virtualization for multi-cloud and container environments.
+
+### **Configuration Code**
+```shell
+# Create a logical switch
+New-NSXLogicalSwitch -Name "AppNetwork"
+```
+
+---
+
+## **31. VMware Carbon Black (Security & Threat Protection)**
+### **Theory**
+Carbon Black protects workloads from ransomware and other cyber threats.
+
+### **Configuration Code**
+```shell
+# Enable Carbon Black Security
+Set-CBProtection -Enable
+```
+
+---
+
+## **32. VMware Aria (Multi-Cloud Management)**
+### **Theory**
+Aria enables unified multi-cloud management and governance.
+
+### **Configuration Code**
+```shell
+# Connect Aria to VMware Cloud
+Connect-AriaCloud -Server cloud-aria
+```
+
+---
+
+## **33. VMware Edge Computing**
+### **Theory**
+VMware Edge computing extends virtualization to remote locations with low latency.
+
+### **Configuration Code**
+```shell
+# Deploy Edge Compute Node
+New-EdgeNode -Name "RemoteBranch01"
+```
+
+---
+
+## **34. VMware Blockchain**
+### **Theory**
+VMware Blockchain provides enterprise-grade distributed ledger technology.
+
+### **Configuration Code**
+```shell
+# Deploy Blockchain Node
+New-BlockchainNode -Name "FinanceLedger"
+```
+
+---
+
+## **35. VMware AI/ML Integration**
+### **Theory**
+VMware supports AI/ML workloads with GPU acceleration and Kubernetes integration.
+
+### **Configuration Code**
+```shell
+# Enable GPU Acceleration
+Set-VM -Name AI_VM -AddGPU
+```
+
+---
+
+## **36. VMware Tanzu Mission Control (TMC)**
+### **Theory**
+Tanzu Mission Control provides centralized management for Kubernetes clusters.
+
+### **Configuration Code**
+```shell
+# Register a Kubernetes Cluster
+Register-TanzuCluster -Name "ProductionK8s"
+```
+
+---
+
+## **37. VMware Cloud Disaster Recovery**
+### **Theory**
+Cloud-based disaster recovery for VMware workloads in hybrid environments.
+
+### **Configuration Code**
+```shell
+# Enable Cloud DR
+Set-CloudDR -Enable
+```
+
+---
+
+## **38. VMware Kubernetes Grid (VKG)**
+### **Theory**
+VKG simplifies Kubernetes cluster deployment on VMware infrastructure.
+
+### **Configuration Code**
+```shell
+# Deploy a Kubernetes Cluster
+New-K8sCluster -Name "DevOpsCluster"
+```
+
+---
+
+## **39. VMware IoT Solutions**
+### **Theory**
+VMware IoT enables management of edge devices and connected infrastructure.
+
+### **Configuration Code**
+```shell
+# Enable IoT Device Management
+Set-IoTDevice -Name "Sensor01" -Enable
+```
+
+---
+
+
 
 This guide provides an in-depth overview of **VMware topics, including ESXi, vSphere, vSAN, networking, storage, security, automation, backup strategies, and advanced VMware services.**
 
